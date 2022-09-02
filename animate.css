@@ -1118,7 +1118,6 @@
 .animate__backOutLeft {
   -webkit-animation-name: backOutLeft;
   animation-name: backOutLeft;
-  display: none;
 }
 @-webkit-keyframes backOutRight {
   0% {
