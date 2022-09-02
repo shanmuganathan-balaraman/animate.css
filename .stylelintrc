@@ -1,0 +1,14 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "string-quotes": null,
+      "keyframe-selector-notation": null,
+      "selector-class-pattern": null,
+      "keyframes-name-pattern": null,
+      "number-max-precision": null,
+      "length-zero-no-unit": null,
+      "keyframe-block-no-duplicate-selectors": null,
+      "rule-empty-line-before": null,
+      "declaration-colon-newline-after": null
+    }
+  }
