@@ -17,4 +17,5 @@
 
 .backOutLeft {
   animation-name: backOutLeft;
+  display: none;
 }
