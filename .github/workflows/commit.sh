@@ -10,6 +10,7 @@ git remote add pusher "${remote_repo}"
 # push to github
 git checkout ${BRANCH_NAME}
 git add -A
+git reset -- yarn.lock # to ignore yarn lock file being commited
 git commit -m "${COMMIT_MESSAGE} -- auto build" --no-verify || exit 0
 git pull --rebase pusher ${BRANCH_NAME}
 git push pusher ${BRANCH_NAME}
