@@ -1,14 +1,17 @@
-name: Build assets, docs and push into same branch
+name: Build and commit
 
 on:
   push:
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ main ]
     paths:
       - source/**
       - docsSource/**
 
 jobs:
   build:
-    name: Build and push
+    name: Build assets, docs and push into same branch
     runs-on: ubuntu-latest
 
     steps:
