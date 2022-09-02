@@ -26,4 +26,5 @@
   animation-duration: calc(var(--animate-duration) * 2);
   animation-name: hinge;
   transform-origin: top left;
+  display: none;
 }
