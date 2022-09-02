@@ -3375,6 +3375,7 @@
   animation-name: hinge;
   -webkit-transform-origin: top left;
   transform-origin: top left;
+  display: none;
 }
 @-webkit-keyframes jackInTheBox {
   from {
