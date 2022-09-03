@@ -8,7 +8,8 @@ git config user.email "actions@users.noreply.github.com"
 git remote add pusher "${remote_repo}"
 
 # push to github
-git checkout ${BRANCH_NAME}
+git fetch
+git checkout --track origin/${BRANCH_NAME}
 git add -A
 git commit -m "${COMMIT_MESSAGE} -- auto build" --no-verify || exit 0
 git pull --rebase pusher ${BRANCH_NAME}
