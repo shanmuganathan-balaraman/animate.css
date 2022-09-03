@@ -1,0 +1,28 @@
+name: Linter
+
+on:
+  pull_request:
+    branches: 
+      - main
+    paths:
+      - source/**
+      - docsSource/**    
+
+jobs:
+  Lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set Node.js to latest version
+      uses: actions/setup-node@master
+      with:
+        node-version: latest
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run lint check
+      run: npm run lint

@@ -1,0 +1,49 @@
+name: Build and commit
+
+on:
+  pull_request:
+    branches: 
+      - main
+    paths:
+      - source/**
+      - docsSource/**
+
+jobs:
+  build:
+    name: Build assets, docs and push into same branch
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: checkout actions v3
+      uses: actions/checkout@v3
+
+    - name: Set Node.js to latest version
+      uses: actions/setup-node@master
+      with:
+        node-version: latest
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build assets
+      run: npm start
+
+    - name: Build docs
+      run: npm run docs 
+
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+
+    - name: Commit action
+      run: |
+         chmod +x ./.github/workflows/commit.sh
+         ./.github/workflows/commit.sh
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH_NAME: ${{ steps.extract_branch.outputs.branch }}
+        COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+
