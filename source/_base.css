@@ -19,9 +19,9 @@
   animation-iteration-count: calc(var(--animate-repeat) * 3);
 } */
 
-.animated.delay-1s {
+/* .animated.delay-1s {
   animation-delay: var(--animate-delay);
-}
+} */
 
 .animated.delay-2s {
   animation-delay: calc(var(--animate-delay) * 2);
