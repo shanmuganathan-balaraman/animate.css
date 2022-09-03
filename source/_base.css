@@ -11,9 +11,9 @@
   animation-iteration-count: var(--animate-repeat);
 }
 
-.animated.repeat-2 {
+/* .animated.repeat-2 {
   animation-iteration-count: calc(var(--animate-repeat) * 2);
-} 
+}  */
 
 .animated.repeat-3 {
   animation-iteration-count: calc(var(--animate-repeat) * 3);
