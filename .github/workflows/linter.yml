@@ -19,7 +19,7 @@ jobs:
     - name: Set Node.js to latest version
       uses: actions/setup-node@master
       with:
-        node-version: 10
+        node-version: latest
 
     - name: Install dependencies
       run: npm install
