@@ -17,5 +17,5 @@ git commit -m "${COMMIT_MESSAGE} -- auto build" --no-verify || exit 0
 # to discard the same we are adding it to stash and dropping it
 git stash
 git stash drop 
-git pull --rebase pusher ${BRANCH_NAME}
+git pull pusher ${BRANCH_NAME}
 git push pusher ${BRANCH_NAME}
