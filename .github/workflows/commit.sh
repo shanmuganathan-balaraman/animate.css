@@ -8,7 +8,7 @@ git config user.email "actions@users.noreply.github.com"
 git remote add pusher "${remote_repo}"
 
 # push to github
-git checkout ${BRANCH_NAME}
+git checkout -b ${BRANCH_NAME}
 git add -A
 git reset -- yarn.lock # to ignore yarn lock file being commited
 git commit -m "${COMMIT_MESSAGE} -- auto build" --no-verify || exit 0
