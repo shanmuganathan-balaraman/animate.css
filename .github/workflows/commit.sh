@@ -12,10 +12,5 @@ git checkout ${BRANCH_NAME}
 git add -A
 git reset -- yarn.lock # to ignore yarn lock file being commited
 git commit -m "${COMMIT_MESSAGE} -- auto build" --no-verify || exit 0
-
-# since yarn.lock file is not committed it will show as unstaged changes, which will thorw error in pull with rebase
-# to discard the same we are adding it to stash and dropping it
-git stash
-git stash drop 
-git pull --rebase pusher ${BRANCH_NAME}
-git push pusher ${BRANCH_NAME}
+git pull
+git push 
